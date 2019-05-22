@@ -58,6 +58,25 @@
               <artifactId>maven-jxr-plugin</artifactId>
             </plugin>
 
+          <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>run-before-surfire</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo message=" !!!! THIS SHOULD RUN BEFORE SUREFIRE !!!! " />
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+                   
+                   
             <plugin>
               <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
